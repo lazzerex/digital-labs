@@ -1,0 +1,288 @@
+
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, #0061ff 0%, #00c7ff 100%);
+    color: white;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 3rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.stat-number {
+font-feature-settings: "tnum";
+font-variant-numeric: tabular-nums;
+transition: all 0.3s ease-out;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.coming-soon {
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon::after {
+    content: "Coming Soon";
+    position: absolute;
+    top: 45px;
+    right: -30px;
+    background: #ffd700;
+    color: #000;
+    padding: 3px 30px;
+    transform: rotate(45deg);
+    font-size: 2rem;
+    font-weight: 800;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 0.65rem;
+    right: -32px;
+    width: 120px;
+    text-align: center;
+}
+
+.featured-section {
+    background: white;
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+/* Add animation */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0061ff;
+    margin-right: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-block {
+    animation: cardEntrance 3.5s ease-out;
+    animation-fill-mode: backwards;
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e0e0e0;
+}
+
+.project-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: #0061ff;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0061ff;
+}
+
+.project-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.project-desc {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.loader-square {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #0061ff;
+    animation: loadAnim 1.6s ease infinite;
+}
+
+.loader-square:nth-child(1) {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.loader-square:nth-child(2) {
+    top: 0;
+    right: 0;
+    animation-delay: 0.4s;
+}
+
+.loader-square:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    animation-delay: 1.2s;
+}
+
+.loader-square:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    animation-delay: 0.8s;
+}
+
+@keyframes loadAnim {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+.loaded .loading-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+body.loading {
+    overflow: hidden;
+}
