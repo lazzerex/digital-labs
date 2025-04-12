@@ -94,6 +94,31 @@
         document.body.classList.remove('loading');
         document.body.classList.add('loaded');
     }, 4000);
-
+    function initFeatureCards() {
+        const features = document.querySelectorAll('.feature-card');
+        
+        features.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.transform = `
+                    perspective(1000px)
+                    rotateX(${(y - rect.height/2) / 8}deg)
+                    rotateY(${-(x - rect.width/2) / 8}deg)
+                `;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    }
+    
+    // Call in load event
+    window.addEventListener('load', () => {
+        initFeatureCards();
+    });
 
     

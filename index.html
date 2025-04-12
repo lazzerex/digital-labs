@@ -5,7 +5,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">  
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lazzerex Digital Labs</title>
@@ -24,15 +24,21 @@
             <div class="loader-square"></div>
         </div>
     </div>
-    
+
     <nav class="navbar">
         <div class="logo">Lazzerex Digital Labs</div>
     </nav>
 
     <!-- Add Hero Section -->
     <section class="hero">
-        <h1>Digital Playground for Modern Minds</h1>
-        <p>Experience reinvented classic games with cutting-edge technology and sleek design</p>
+        <div class="hero-content">
+            <h1>Digital Playground for Modern Minds</h1>
+            <p class="hero-subtext">Experience reinvented classic games with cutting-edge technology and sleek design</p>
+            
+            <div class="cta-buttons">
+                <a href="#games" class="cta-button">Explore Games</a>
+                <a href="#projects" class="cta-button outline">View Projects</a>
+            </div>
 
         <div class="stats-container">
             <div class="stat-item">
@@ -103,6 +109,42 @@
         </div>
     </div>
 
+    <!-- Side Projects Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Side Projects & Experiments</h2>
+            <div class="grid">
+                <a href="#" class="project-block" target="_blank">
+                    <i class="project-icon fas fa-tasks" style="color: #3b82f6;"></i>
+                    <div class="project-title">TaskFlow</div>
+                    <div class="project-desc">
+                        Full-featured task management system with priority levels, due dates,
+                        and collaborative workspaces. Built with Laravel and Tailwind CSS.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Tailwind</span>
+                        <span class="tech-pill">MySQL</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project-block" target="_blank">
+                    <i class="project-icon fas fa-laptop-code" style="color: #10b981;"></i>
+                    <div class="project-title">Portfolio Architect</div>
+                    <div class="project-desc">
+                        Modern portfolio template system with dynamic content loading and
+                        interactive elements. Powered by Laravel and Alpine.js.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Alpine.js</span>
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Tailwind</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Section -->
     <section class="featured-section">
         <div class="container">
@@ -122,6 +164,49 @@
                     <i class="project-icon fas fa-shield-alt" style="color: #ffd700;"></i>
                     <div class="project-title">Safe & Secure</div>
                     <div class="project-desc">Ad-free environment with privacy protection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Why Developers Love Our Stack</h2>
+            <div class="grid grid-three-col">
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized WebGL rendering and efficient state management</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock feature-icon"></i>
+                    <h3>Secure by Design</h3>
+                    <p>End-to-end encryption and regular security audits</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code-branch feature-icon"></i>
+                    <h3>Open Source</h3>
+                    <p>Community-driven development with MIT licensing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h2>Join Our Developer Circle</h2>
+                    <p>Get early access to new projects and exclusive technical insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your best email..." required>
+                        <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="newsletter-graphic">
+                    <div class="pulsing-dot"></div>
+                    <div class="connecting-line"></div>
                 </div>
             </div>
         </div>
