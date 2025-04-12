@@ -4,9 +4,11 @@ A digital playground for modern minds, featuring reinvented classic games with c
 
 Visit the site: [Lazzerex Digital Labs](https://digital-labs-nine.vercel.app/)
 
-![image](https://github.com/user-attachments/assets/72371377-1591-44fa-a93f-3bc76b660b65)
+![image](https://github.com/user-attachments/assets/d84f666a-5861-4ed2-b75a-0958675b7d9e)
 
-![image](https://github.com/user-attachments/assets/baeee9e6-b024-4def-b55e-05ac97d893e3)
+
+![image](https://github.com/user-attachments/assets/6c139d86-d0c7-4f96-a53b-a3b4752aad23)
+
 
 
 ## Features
