@@ -2,10 +2,12 @@
 
 A digital playground for modern minds, featuring reinvented classic games with cutting-edge technology and sleek design.
 
-Visit the site: [Lazzerex Digital Labs](https://lazzerex-digital-labs.vercel.app/)
+Visit the site: [Lazzerex Digital Labs](https://digital-labs-nine.vercel.app/)
 
-![Screenshot of Lazzerex Digital Labs homepage](https://github.com/user-attachments/assets/example-screenshot-1)
-![Screenshot of game collection](https://github.com/user-attachments/assets/example-screenshot-2)
+![image](https://github.com/user-attachments/assets/72371377-1591-44fa-a93f-3bc76b660b65)
+
+![image](https://github.com/user-attachments/assets/baeee9e6-b024-4def-b55e-05ac97d893e3)
+
 
 ## Features
 
