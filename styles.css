@@ -1,3 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+body.loading {
+    opacity: 0;
+}
+
 
 .hero {
     text-align: center;
@@ -11,6 +24,18 @@
     position: relative;
     overflow: hidden;
     padding: 8rem 2rem 6rem;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    top: 20%;
+    left: 50%;
+    animation: float 12s infinite;
+    mix-blend-mode: soft-light;
 }
 
 .hero::after {
@@ -30,6 +55,9 @@
     25% { transform: translate(100px, 50px) rotate(5deg); }
     50% { transform: translate(-50px, 100px) rotate(-5deg); }
     75% { transform: translate(-100px, -50px) rotate(5deg); }
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -55%) scale(1.05); }
+
 }
 
 
@@ -42,6 +70,7 @@
     font-size: 1.25rem;
     margin: 1.5rem auto;
     max-width: 800px;
+    animation: slideUpFadeIn 1s ease-out 0.4s backwards;
 }
 
 
@@ -49,6 +78,7 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    animation: slideUpFadeIn 1s ease-out 0.2s backwards;
 }
 
 .hero p {
@@ -64,6 +94,7 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    animation: slideUpFadeIn 1s ease-out 0.6s backwards;
 }
 
 .cta-button {
@@ -99,16 +130,24 @@
 font-feature-settings: "tnum";
 font-variant-numeric: tabular-nums;
 transition: all 0.3s ease-out;
+display: inline-block;
+transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .stat-item {
     text-align: center;
+    perspective: 1000px;
 }
 
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
     color: #ffd700;
+}
+
+.stat-item:hover .stat-number {
+    transform: rotateX(15deg) scale(1.1);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .stat-label {
@@ -164,6 +203,15 @@ transition: all 0.3s ease-out;
     padding: 2rem;
     text-align: center;
     margin-top: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+
+}
+
+.footer.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .social-links {
@@ -229,18 +277,21 @@ body {
     background: white;
     border-radius: 16px;
     padding: 2rem;
-    transition: all 0.2s ease;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
     border: 1px solid #e0e0e0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
 }
 
 .project-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-8px) rotateX(5deg) rotateY(-2deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     border-color: #0061ff;
 }
+
+
 
 .project-icon {
     font-size: 2.5rem;
@@ -342,6 +393,17 @@ body {
     }
 }
 
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .loaded .loading-overlay {
     opacity: 0;
     pointer-events: none;
@@ -397,7 +459,25 @@ body.loading {
     text-align: center;
     transition: transform 0.3s ease;
     border: 1px solid #eaeaea;
+    transform-style: preserve-3d;
+    position: relative;
 }
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x) var(--y), 
+        rgba(0,97,255,0.08) 0%, 
+        transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
 
 .feature-icon {
     font-size: 2.5rem;
@@ -406,6 +486,11 @@ body.loading {
     background: rgba(0,97,255,0.1);
     padding: 1.5rem;
     border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotate(-15deg) scale(1.1);
 }
 
 .grid-three-col {
