@@ -7,6 +7,9 @@ Visit the site: [Lazzerex Digital Labs](https://digital-labs-nine.vercel.app/)
 ![image](https://github.com/user-attachments/assets/d84f666a-5861-4ed2-b75a-0958675b7d9e)
 
 
+![image](https://github.com/user-attachments/assets/a241dd88-ee02-45ae-b648-caac3b966371)
+
+
 ![image](https://github.com/user-attachments/assets/6c139d86-d0c7-4f96-a53b-a3b4752aad23)
 
 
