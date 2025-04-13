@@ -7,9 +7,9 @@ body {
     transition: opacity 0.3s ease;
 }
 
-body.loading {
+/* body.loading {
     opacity: 0;
-}
+} */
 
 
 .hero {
@@ -329,6 +329,15 @@ body {
     }
 }
 
+body:not(.loaded) {
+    overflow: hidden;
+}
+
+.loaded .loading-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -410,9 +419,9 @@ body {
 }
 
 
-body.loading {
+/* body.loading {
     overflow: hidden;
-}
+} */
 
 /* Side Projects Specific Styles */
 .tech-stack {
@@ -640,4 +649,15 @@ body.loading {
     .newsletter-form button {
         justify-content: center;
     }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
