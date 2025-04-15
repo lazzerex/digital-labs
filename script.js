@@ -131,3 +131,22 @@ function initFeatureCards() {
 window.addEventListener('load', () => {
     initFeatureCards();
 });
+
+//scroll
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        
+        if (targetSection) {
+            const targetPosition = targetSection.offsetTop - navbarHeight - 20; // 20px extra spacing
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
