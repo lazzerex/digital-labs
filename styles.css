@@ -745,6 +745,64 @@ body:not(.loaded) {
     transform: translateY(-1px);
 }
 
+/* Coming Soon Web Apps Specific Styles */
+.web-app-block.coming-soon {
+    position: relative;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    opacity: 0.8;
+}
+
+.web-app-block.coming-soon::after {
+    content: "Coming Soon";
+    position: absolute;
+    top: 35px;
+    right: -35px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    color: white;
+    padding: 4px 35px;
+    transform: rotate(45deg);
+    font-size: 0.7rem;
+    font-weight: 800;
+    z-index: 1;
+    pointer-events: none;
+    width: 130px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.web-app-block.coming-soon:hover {
+    opacity: 0.9;
+    transform: translateY(-5px) scale(1.01);
+}
+
+/* Color variations for different apps */
+.web-app-block.coming-soon:nth-child(2) .project-icon {
+    background: linear-gradient(135deg, #059669, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.web-app-block.coming-soon:nth-child(3) .project-icon {
+    background: linear-gradient(135deg, #dc2626, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Different feature tag colors */
+.web-app-block.coming-soon:nth-child(2) .feature-tag {
+    background: rgba(5, 150, 105, 0.1);
+    color: #059669;
+    border-color: rgba(5, 150, 105, 0.2);
+}
+
+.web-app-block.coming-soon:nth-child(3) .feature-tag {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+    border-color: rgba(220, 38, 38, 0.2);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .app-features {
@@ -754,5 +812,11 @@ body:not(.loaded) {
     .feature-tag {
         font-size: 0.75rem;
         padding: 0.3rem 0.6rem;
+    }
+    
+    .web-app-block.coming-soon::after {
+        right: -32px;
+        font-size: 0.65rem;
+        width: 120px;
     }
 }
