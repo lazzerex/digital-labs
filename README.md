@@ -33,13 +33,14 @@ Visit the site: [Lazzerex Digital Labs](https://digital-labs-nine.vercel.app/)
 2. **NeoSudoku**: Intelligent number puzzle game with multiple difficulty levels and hints
 3. **Neo2048**: Reimagined sliding block puzzle with smooth animations
 4. **MemoMix**: Memory challenge game with dynamic patterns
+5. **WordRush**: A typing test challenge with interactive elements
 
 ## Coming Soon
 
 - **NeoChess**: 3D chess experience with AI opponents and live tournaments
 - **PixelQuest**: Daily puzzle challenges with global leaderboards
 - **CodeClash**: Programming puzzle battles with real-time code validation
-- **WordRush**: Fast-paced vocabulary builder with multiplayer challenges
+
 
 ## Why Choose Our Games?
 
