@@ -26,7 +26,7 @@
                 <a href="#projects" class="nav-item">Projects</a>
                 <a href="#web-apps" class="nav-item">Web Apps</a>
                 <a href="#" class="nav-item">About</a>
-                <a href="#" class="nav-item">Contact</a>
+                <a href="https://github.com/lazzerex" target="_blank" class="nav-item">Github</a>
             </div>
             
             <div class="nav-buttons">
@@ -95,43 +95,43 @@
 
     <div class="container" id="games">
         <div class="grid animate-on-scroll">
-            <a href="https://neo-sweeper.vercel.app/" class="project-block" target="_blank">
+            <div class="project-block" onclick="openGame('NeoSweeper', 'https://neo-sweeper.vercel.app/')">
                 <i class="project-icon fas fa-bomb"></i>
                 <div class="project-title">NeoSweeper</div>
-                <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and gameplay
-                    mechanics</div>
-            </a>
+                <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and gameplay mechanics</div>
+            </div>
+            
 
-            <a href="https://neo-sudoku.vercel.app/" class="project-block" target="_blank">
+            <div class ="project-block" onclick="openGame('NeoSudoku', 'https://neo-sudoku.vercel.app/')">              
                 <i class="project-icon fas fa-border-all"></i>
                 <div class="project-title">NeoSudoku</div>
                 <div class="project-desc">Intelligent number puzzle game with multiple difficulty levels and hints</div>
-            </a>
+            </div>
 
-            <a href="https://neo-2048.vercel.app/" class="project-block" target="_blank">
+            <div class ="project-block" onclick="openGame('Neo2048', 'https://neo-2048.vercel.app/')">
                 <i class="project-icon fas fa-superscript"></i>
                 <div class="project-title">Neo2048</div>
                 <div class="project-desc">Reimagined sliding block puzzle with smooth animations</div>
-            </a>
+            </div>
 
-            <a href="https://neo-solitaire.vercel.app/" class="project-block" target="_blank">
+            <div class ="project-block" onclick="openGame('NeoSolitaire', 'https://neo-solitaire.vercel.app/')">
                 <i class="project-icon fas fa-diamond"></i>
                 <div class="project-title">NeoSolitaire</div>
                 <div class="project-desc">Modern solitaire card game with sleek design and fluid animations</div>
-            </a>
+            </div>
 
-            <a href="https://memomix.vercel.app/" class="project-block" target="_blank">
+            <div class="project-block" onclick="openGame('MemoMix', 'https://memomix.vercel.app/')">
                 <i class="project-icon fas fa-shuffle"></i>
                 <div class="project-title">MemoMix</div>
                 <div class="project-desc">Memory challenge game with dynamic patterns</div>
-            </a>
+            </div>
 
 
-            <a href="https://word-rush-six.vercel.app/" class="project-block" target="_blank">
+            <div class="project-block" onclick="openGame('WordRush', 'https://word-rush-six.vercel.app/')">
                 <i class="project-icon fas fa-keyboard"></i>
                 <div class="project-title">WordRush</div>
-                <div class="project-desc">Interactive typing test web application made with Next.js</div>
-            </a>
+                <div class="project-desc">Interactive typing test web application made with Next.js</div>             
+            </div>
 
             
             <div class="project-block coming-soon">
@@ -154,6 +154,21 @@
             </div>
 
             
+        </div>
+    </div>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="gameTitle">Game Title</h3>
+                <button class="close" onclick="closeGame()">&times;</button>
+            </div>
+            <div id="loadingIndicator" class="loading">
+                <div class="spinner"></div>
+                Loading game...
+            </div>
+            <iframe id="gameFrame" class="game-iframe" style="display: none;"></iframe>
         </div>
     </div>
 
@@ -360,10 +375,10 @@
     <footer class="footer">
         <p>© 2025 Lazzerex Digital Labs. All rights reserved.</p>
         <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+            <!--<a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--<a href="#"><i class="fab fa-discord"></i></a>-->
+            <a href="https://github.com/lazzerex" target="_blank"><i class="fab fa-github"></i></a>
+            <!--<a href="#"><i class="fas fa-envelope"></i></a>-->
         </div>
     </footer>
     <script src="script.js"></script>
