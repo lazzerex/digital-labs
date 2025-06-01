@@ -192,3 +192,73 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+//scripts for game modal here
+let currentGameFrame = null;
+
+        function openGame(title, gameUrl) {
+            // Set game title
+            document.getElementById('gameTitle').textContent = title;
+            
+            // Show modal
+            document.getElementById('gameModal').style.display = 'block';
+            
+            // Show loading indicator
+            document.getElementById('loadingIndicator').style.display = 'flex';
+            document.getElementById('gameFrame').style.display = 'none';
+            
+            // Get iframe element
+            currentGameFrame = document.getElementById('gameFrame');
+            
+            // Set up load event listener
+            currentGameFrame.onload = function() {
+                // Hide loading indicator and show game
+                document.getElementById('loadingIndicator').style.display = 'none';
+                currentGameFrame.style.display = 'block';
+            };
+            
+            // Load the game
+            currentGameFrame.src = gameUrl;
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGame() {
+            // Hide modal
+            document.getElementById('gameModal').style.display = 'none';
+            
+            // Clear iframe source to stop the game
+            if (currentGameFrame) {
+                currentGameFrame.src = '';
+            }
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('gameModal');
+            if (event.target === modal) {
+                closeGame();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGame();
+            }
+        });
+
+        // Handle iframe communication (optional)
+        window.addEventListener('message', function(event) {
+            // Handle messages from games if needed
+            console.log('Message from game:', event.data);
+            
+            // Example: Close modal if game sends 'close' message
+            if (event.data === 'close') {
+                closeGame();
+            }
+        });
