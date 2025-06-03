@@ -32,8 +32,9 @@ Visit the site: [Lazzerex Digital Labs](https://digital-labs-nine.vercel.app/)
 1. **NeoSweeper**: Modern twist on classic minesweeper with enhanced visuals and gameplay mechanics
 2. **NeoSudoku**: Intelligent number puzzle game with multiple difficulty levels and hints
 3. **Neo2048**: Reimagined sliding block puzzle with smooth animations
-4. **MemoMix**: Memory challenge game with dynamic patterns
-5. **WordRush**: A typing test challenge with interactive elements
+4. **NeoSolitaire**: A still work-in-progress modern version of Solitaire
+5. **MemoMix**: Memory challenge game with dynamic patterns
+6. **WordRush**: A typing test challenge with interactive elements
 
 ## Coming Soon
 
