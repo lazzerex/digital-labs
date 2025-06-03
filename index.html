@@ -29,10 +29,19 @@
                 <a href="https://github.com/lazzerex" target="_blank" class="nav-item">Github</a>
             </div>
             
-            <div class="nav-buttons">
-                <a href="#" class="login-button">Sign In</a>
-                <a href="#" class="cta-button nav-cta">Get Started</a>
-            </div>
+            <div class="nav-buttons" id="navButtons">
+    <!-- Default state (not signed in) -->
+    <div id="guestButtons">
+        <a href="#" class="login-button" onclick="openAuthModal('signin')">Sign In</a>
+        <a href="#" class="cta-button nav-cta" onclick="openAuthModal('signup')">Get Started</a>
+    </div>
+    
+    <!-- Signed in state -->
+    <div id="userProfile" class="user-profile" style="display: none;">
+        <div class="user-avatar" id="userAvatar" title="User Profile">JD</div>
+        <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+    </div>
+</div>
             
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
@@ -382,6 +391,49 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <!-- Authentication Modal -->
+<div id="authModal" class="auth-modal">
+    <div class="auth-modal-content">
+        <div class="auth-header">
+            <h2 id="authModalTitle">Welcome Back</h2>
+            <button class="auth-close" onclick="closeAuthModal()">&times;</button>
+        </div>
+        <div class="auth-body">
+            <div id="successMessage" class="success-message" style="display: none;">
+                Account created successfully! Welcome to Lazzerex Digital Labs. Please wait a second while we redirect you to the homepage.
+            </div>
+            
+            <form id="authForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                </div>
+                
+                <div class="form-group" id="nameGroup" style="display: none;">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                </div>
+                
+                <button type="submit" class="auth-submit" id="authSubmitBtn">Sign In</button>
+            </form>
+            
+            <div class="auth-switch">
+                <span id="authSwitchText">Don't have an account?</span>
+                <a class="auth-switch-link" onclick="toggleAuthMode()" id="authSwitchLink">Create one</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

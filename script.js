@@ -262,3 +262,350 @@ let currentGameFrame = null;
                 closeGame();
             }
         });
+
+        
+// Authentication Modal Functions
+let isLoginMode = true;
+
+function openAuthModal(mode = 'login') {
+    // Normalize the mode parameter to handle different variations
+    isLoginMode = mode === 'login' || mode === 'signin';
+    updateAuthModal();
+    document.getElementById('authModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.getElementById('authForm').reset();
+    document.getElementById('successMessage').style.display = 'none';
+    
+    // Reset form display in case it was hidden after registration
+    document.getElementById('authForm').style.display = 'flex';
+}
+
+function updateAuthModal() {
+    const title = document.getElementById('authModalTitle');
+    const submitBtn = document.getElementById('authSubmitBtn');
+    const switchText = document.getElementById('authSwitchText');
+    const switchLink = document.getElementById('authSwitchLink');
+    const confirmPasswordGroup = document.getElementById('confirmPasswordGroup');
+    const nameGroup = document.getElementById('nameGroup');
+    
+    if (isLoginMode) {
+        title.textContent = 'Welcome Back';
+        submitBtn.textContent = 'Sign In';
+        switchText.textContent = "Don't have an account?";
+        switchLink.textContent = 'Create one';
+        confirmPasswordGroup.style.display = 'none';
+        nameGroup.style.display = 'none';
+        document.getElementById('confirmPassword').required = false;
+        document.getElementById('fullName').required = false;
+    } else {
+        title.textContent = 'Join Us Today';
+        submitBtn.textContent = 'Create Account';
+        switchText.textContent = 'Already have an account?';
+        switchLink.textContent = 'Sign in';
+        confirmPasswordGroup.style.display = 'flex';
+        nameGroup.style.display = 'flex';
+        document.getElementById('confirmPassword').required = true;
+        document.getElementById('fullName').required = true;
+    }
+}
+
+function toggleAuthMode() {
+    isLoginMode = !isLoginMode;
+    updateAuthModal();
+    document.getElementById('authForm').reset();
+    document.getElementById('successMessage').style.display = 'none';
+    // Reset form display in case it was hidden
+    document.getElementById('authForm').style.display = 'flex';
+}
+
+// Track user authentication state
+let isUserSignedIn = false;
+let currentUser = null;
+
+// Function to handle successful sign in
+function handleSignInSuccess(userData) {
+    isUserSignedIn = true;
+    currentUser = userData;
+    
+    // Update UI to show user profile
+    showUserProfile(userData);
+    
+    // Close auth modal
+    closeAuthModal();
+    
+    console.log('User signed in successfully:', userData);
+}
+
+// Function to show user profile in navigation
+function showUserProfile(userData) {
+    // Hide guest buttons
+    const guestButtons = document.getElementById('guestButtons');
+    const guestMobileButtons = document.getElementById('guestMobileButtons');
+    
+    if (guestButtons) guestButtons.style.display = 'none';
+    if (guestMobileButtons) guestMobileButtons.style.display = 'none';
+    
+    // Show user profile
+    const userProfile = document.getElementById('userProfile');
+    const userMobileProfile = document.getElementById('userMobileProfile');
+    
+    if (userProfile) userProfile.style.display = 'flex';
+    if (userMobileProfile) userMobileProfile.style.display = 'flex';
+    
+    // Set user avatar initials
+    const initials = getInitials(userData.name || userData.email);
+    const userAvatar = document.getElementById('userAvatar');
+    const userMobileAvatar = document.getElementById('userMobileAvatar');
+    
+    if (userAvatar) userAvatar.textContent = initials;
+    if (userMobileAvatar) userMobileAvatar.textContent = initials;
+    
+    // Set mobile name
+    const userMobileName = document.getElementById('userMobileName');
+    if (userMobileName) userMobileName.textContent = userData.name || userData.email;
+}
+
+// Function to get user initials
+function getInitials(name) {
+    if (!name) return 'U';
+    
+    const names = name.split(' ');
+    if (names.length >= 2) {
+        return (names[0][0] + names[1][0]).toUpperCase();
+    }
+    return name.charAt(0).toUpperCase();
+}
+
+// Function to handle sign out
+function signOut() {
+    isUserSignedIn = false;
+    currentUser = null;
+    
+    // Show guest buttons
+    const guestButtons = document.getElementById('guestButtons');
+    const guestMobileButtons = document.getElementById('guestMobileButtons');
+    
+    if (guestButtons) guestButtons.style.display = 'flex';
+    if (guestMobileButtons) guestMobileButtons.style.display = 'flex';
+    
+    // Hide user profile
+    const userProfile = document.getElementById('userProfile');
+    const userMobileProfile = document.getElementById('userMobileProfile');
+    
+    if (userProfile) userProfile.style.display = 'none';
+    if (userMobileProfile) userMobileProfile.style.display = 'none';
+    
+    console.log('User signed out successfully');
+}
+
+// Enhanced form submission handler
+function handleAuthFormSubmission(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const fullName = document.getElementById('fullName').value.trim();
+    
+    // Basic validation
+    if (!email || !password) {
+        alert('Please fill in all required fields!');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address!');
+        return;
+    }
+    
+    // Registration mode validations
+    if (!isLoginMode) {
+        if (!fullName) {
+            alert('Please enter your full name!');
+            return;
+        }
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+        
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long!');
+            return;
+        }
+    }
+    
+    // Show loading state
+    const submitBtn = document.getElementById('authSubmitBtn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Loading...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call
+    setTimeout(() => {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        if (isLoginMode) {
+            // Simulate login success
+            const userData = {
+                email: email,
+                name: fullName || email.split('@')[0], // Use email prefix if no name
+                id: Date.now() // Simple ID for demo
+            };
+            
+            handleSignInSuccess(userData);
+            //alert(`Welcome back! Signed in as ${email}`);
+        } else {
+            // Simulate registration success
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('authForm').style.display = 'none';
+            
+            // Auto close and sign in user after 2.5 seconds
+            setTimeout(() => {
+                const userData = {
+                    email: email,
+                    name: fullName,
+                    id: Date.now()
+                };
+                
+                handleSignInSuccess(userData);
+                //alert(`Account created successfully! Welcome, ${fullName}!`);
+            }, 3000);
+        }
+    }, 1000); // Simulate network delay
+}
+
+// Enhanced button listener setup
+function updateAuthButtonListeners() {
+    // Remove existing listeners to prevent duplicates
+    const existingButtons = document.querySelectorAll('[data-auth-listener]');
+    existingButtons.forEach(btn => btn.removeAttribute('data-auth-listener'));
+    
+    // Update Sign In buttons
+    document.querySelectorAll('.login-button').forEach(button => {
+        if (!button.hasAttribute('data-auth-listener')) {
+            button.setAttribute('data-auth-listener', 'true');
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openAuthModal('login');
+            });
+        }
+    });
+    
+    // Update Get Started buttons (excluding game/project navigation buttons)
+    document.querySelectorAll('.cta-button:not([href="#games"]):not([href="#projects"])').forEach(button => {
+        if (!button.hasAttribute('data-auth-listener')) {
+            button.setAttribute('data-auth-listener', 'true');
+            button.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // Only prevent default for non-navigation buttons
+                if (!href || href === '#' || href === '') {
+                    e.preventDefault();
+                    openAuthModal('register');
+                }
+            });
+        }
+    });
+    
+    // Handle nav-cta specifically
+    document.querySelectorAll('.nav-cta').forEach(button => {
+        if (!button.hasAttribute('data-auth-listener')) {
+            button.setAttribute('data-auth-listener', 'true');
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openAuthModal('register');
+            });
+        }
+    });
+}
+
+// Enhanced DOMContentLoaded handler
+document.addEventListener('DOMContentLoaded', function() {
+    const authForm = document.getElementById('authForm');
+    
+    if (authForm) {
+        authForm.addEventListener('submit', handleAuthFormSubmission);
+    }
+    
+    // Set up button listeners
+    updateAuthButtonListeners();
+    
+    // Handle mobile menu auth buttons
+    document.querySelectorAll('.mobile-menu .login-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openAuthModal('login');
+        });
+    });
+    
+    document.querySelectorAll('.mobile-menu .cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openAuthModal('register');
+        });
+    });
+});
+
+// Enhanced modal close handlers
+window.addEventListener('click', function(event) {
+    const authModal = document.getElementById('authModal');
+    const gameModal = document.getElementById('gameModal');
+    
+    if (event.target === authModal) {
+        closeAuthModal();
+    } else if (event.target === gameModal) {
+        closeGame();
+    }
+});
+
+// Enhanced keyboard handlers
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const authModal = document.getElementById('authModal');
+        const gameModal = document.getElementById('gameModal');
+        
+        if (authModal && authModal.style.display === 'block') {
+            closeAuthModal();
+        } else if (gameModal && gameModal.style.display === 'block') {
+            closeGame();
+        }
+    }
+});
+
+// Newsletter form handler (bonus feature)
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                // Simulate subscription
+                const button = this.querySelector('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = 'Subscribing...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    button.innerHTML = 'Subscribed! ✓';
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        this.reset();
+                    }, 2000);
+                }, 1000);
+            }
+        });
+    }
+});
