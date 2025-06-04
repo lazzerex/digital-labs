@@ -403,6 +403,30 @@ function signOut() {
     console.log('User signed out successfully');
 }
 
+function showAuthLoading(message = 'Loading...') {
+    const overlay = document.getElementById('authLoadingOverlay');
+    const text = document.getElementById('authLoadingText');
+    const submitBtn = document.getElementById('authSubmitBtn');
+    
+    if (text) text.textContent = message;
+    if (overlay) overlay.style.display = 'flex';
+    if (submitBtn) {
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+    }
+}
+
+function hideAuthLoading() {
+    const overlay = document.getElementById('authLoadingOverlay');
+    const submitBtn = document.getElementById('authSubmitBtn');
+    
+    if (overlay) overlay.style.display = 'none';
+    if (submitBtn) {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+    }
+}
+
 // Enhanced form submission handler
 function handleAuthFormSubmission(e) {
     e.preventDefault();
@@ -443,18 +467,12 @@ function handleAuthFormSubmission(e) {
         }
     }
     
-    // Show loading state
-    const submitBtn = document.getElementById('authSubmitBtn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Loading...';
-    submitBtn.disabled = true;
+    // Show loading animation with appropriate message
+    const loadingMessage = isLoginMode ? 'Signing you in...' : 'Creating your account...';
+    showAuthLoading(loadingMessage);
     
     // Simulate API call
     setTimeout(() => {
-        // Reset button state
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        
         if (isLoginMode) {
             // Simulate login success
             const userData = {
@@ -463,14 +481,15 @@ function handleAuthFormSubmission(e) {
                 id: Date.now() // Simple ID for demo
             };
             
+            hideAuthLoading();
             handleSignInSuccess(userData);
-            //alert(`Welcome back! Signed in as ${email}`);
         } else {
-            // Simulate registration success
+            // Show success message for registration
+            hideAuthLoading();
             document.getElementById('successMessage').style.display = 'block';
             document.getElementById('authForm').style.display = 'none';
             
-            // Auto close and sign in user after 2.5 seconds
+            // Auto close and sign in user after 3 seconds
             setTimeout(() => {
                 const userData = {
                     email: email,
@@ -479,10 +498,21 @@ function handleAuthFormSubmission(e) {
                 };
                 
                 handleSignInSuccess(userData);
-                //alert(`Account created successfully! Welcome, ${fullName}!`);
             }, 3000);
         }
-    }, 1000); // Simulate network delay
+    }, 1500); // Simulate network delay
+}
+
+// Update closeAuthModal to also hide loading
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.getElementById('authForm').reset();
+    document.getElementById('successMessage').style.display = 'none';
+    hideAuthLoading();
+    
+    // Reset form display in case it was hidden after registration
+    document.getElementById('authForm').style.display = 'flex';
 }
 
 // Enhanced button listener setup

@@ -394,6 +394,14 @@
     <!-- Authentication Modal -->
 <div id="authModal" class="auth-modal">
     <div class="auth-modal-content">
+        <!-- Add loading overlay -->
+        <div id="authLoadingOverlay" class="auth-loading-overlay">
+            <div class="auth-loading-content">
+                <div class="auth-spinner"></div>
+                <div class="auth-loading-text" id="authLoadingText">Signing you in...</div>
+            </div>
+        </div>
+        
         <div class="auth-header">
             <h2 id="authModalTitle">Welcome Back</h2>
             <button class="auth-close" onclick="closeAuthModal()">&times;</button>

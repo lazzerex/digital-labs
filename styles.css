@@ -1376,3 +1376,72 @@ body:not(.loaded) {
     text-align: center;
     cursor: pointer;
 }
+
+/* Loading overlay for auth modal */
+.auth-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 20px; /* Match the modal border radius */
+    flex-direction: column;
+}
+
+.auth-loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loading spinner */
+.auth-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0061ff; /* Match your theme color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Loading text */
+.auth-loading-text {
+    margin-top: 16px;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Button loading state */
+.auth-submit.loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-submit.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
