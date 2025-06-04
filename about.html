@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Lazzerex Digital Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="index.html">Lazzerex Digital Labs</a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html#games" class="nav-item">Games</a>
+                    <a href="index.html#projects" class="nav-item">Projects</a>
+                    <a href="index.html#web-apps" class="nav-item">Web Apps</a>
+                    <a href="about.html" class="nav-item active">About</a>
+                    <a href="https://github.com/lazzerex" target="_blank" class="nav-item">Github</a>
+                </div>
+                
+                <div class="nav-buttons" id="navButtons">
+                    <div id="guestButtons">
+                        <a href="#" class="login-button" onclick="openAuthModal('signin')">Sign In</a>
+                        <a href="#" class="cta-button nav-cta" onclick="openAuthModal('signup')">Get Started</a>
+                    </div>
+                    
+                    <div id="userProfile" class="user-profile" style="display: none;">
+                        <div class="user-avatar" id="userAvatar" title="User Profile">JD</div>
+                        <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="mobile-menu">
+            <a href="index.html#games" class="mobile-menu-item">Games</a>
+            <a href="index.html#projects" class="mobile-menu-item">Projects</a>
+            <a href="index.html#web-apps" class="mobile-menu-item">Web Apps</a>
+            <a href="about.html" class="mobile-menu-item">About</a>
+            <div class="mobile-buttons">
+                <a href="#" class="login-button mobile">Sign In</a>
+                <a href="#" class="cta-button mobile">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="hero about-hero">
+        <div class="hero-content">
+            <h1>About Lazzerex Digital Labs</h1>
+            <p class="hero-subtext">Crafting digital experiences that blend innovation with classic gaming nostalgia</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>At Lazzerex Digital Labs, we believe that the best games transcend time. Our mission is to reimagine beloved classics with modern technology, creating experiences that honor the past while embracing the future. We're passionate about building games that are not just entertaining, but meaningful and accessible to everyone.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>What We Do</h2>
+                    <div class="grid grid-two-col">
+                        <div class="feature-card">
+                            <i class="fas fa-gamepad feature-icon"></i>
+                            <h3>Game Development</h3>
+                            <p>We specialize in recreating classic games with modern twists, enhanced graphics, and improved user experiences. From Minesweeper to Sudoku, we bring your favorite puzzles into the digital age.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-laptop-code feature-icon"></i>
+                            <h3>Web Applications</h3>
+                            <p>Beyond games, we develop practical web applications that solve real-world problems. Our portfolio includes task management systems, comparison platforms, and productivity tools.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Technology Stack</h2>
+                    <p>We leverage cutting-edge technologies to deliver exceptional experiences:</p>
+                    <div class="tech-showcase">
+                        <div class="tech-category">
+                            <h4>Frontend</h4>
+                            <div class="tech-pills">
+                                <span class="tech-pill">Next.js</span>
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Vue.js</span>
+                                <span class="tech-pill">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Backend</h4>
+                            <div class="tech-pills">
+                                <span class="tech-pill">Laravel</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">Express</span>
+                                <span class="tech-pill">Python</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Database & Cloud</h4>
+                            <div class="tech-pills">
+                                <span class="tech-pill">MySQL</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">Firebase</span>
+                                <span class="tech-pill">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Values</h2>
+                    <div class="grid grid-three-col">
+                        <div class="value-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>User-Centric</h3>
+                            <p>Every decision we make is guided by what's best for our users and their experience.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Innovation</h3>
+                            <p>We constantly push boundaries to create something new while respecting timeless gameplay.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Community</h3>
+                            <p>We believe in open-source development and building together with our community.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Join Our Journey</h2>
+                    <p>Whether you're a player looking for your next favorite game, a developer interested in contributing to our open-source projects, or a partner wanting to collaborate, we'd love to hear from you.</p>
+                    <div class="cta-buttons" style="margin-top: 2rem;">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Lazzerex Digital Labs. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/lazzerex" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <div id="authLoadingOverlay" class="auth-loading-overlay">
+                <div class="auth-loading-content">
+                    <div class="auth-spinner"></div>
+                    <div class="auth-loading-text" id="authLoadingText">Signing you in...</div>
+                </div>
+            </div>
+            
+            <div class="auth-header">
+                <h2 id="authModalTitle">Welcome Back</h2>
+                <button class="auth-close" onclick="closeAuthModal()">&times;</button>
+            </div>
+            <div class="auth-body">
+                <div id="successMessage" class="success-message" style="display: none;">
+                    Account created successfully! Welcome to Lazzerex Digital Labs.
+                </div>
+                
+                <form id="authForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                    
+                    <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                    
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                    </div>
+                    
+                    <button type="submit" class="auth-submit" id="authSubmitBtn">Sign In</button>
+                </form>
+                
+                <div class="auth-switch">
+                    <span id="authSwitchText">Don't have an account?</span>
+                    <a class="auth-switch-link" onclick="toggleAuthMode()" id="authSwitchLink">Create one</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
