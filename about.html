@@ -61,15 +61,30 @@
     </header>
 
     <!-- About Hero Section -->
-    <section class="hero about-hero">
+    <section class="hero about-hero animate-on-scroll">
         <div class="hero-content">
             <h1>About Lazzerex Digital Labs</h1>
             <p class="hero-subtext">Crafting digital experiences that blend innovation with classic gaming nostalgia</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Games Played</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">User Satisfaction</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Mission Section -->
-    <section class="featured-section">
+    <section class="featured-section animate-on-scroll">
         <div class="container">
             <div class="about-content">
                 <div class="about-section">
@@ -92,76 +107,141 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-section">
-                    <h2>Our Technology Stack</h2>
-                    <p>We leverage cutting-edge technologies to deliver exceptional experiences:</p>
-                    <div class="tech-showcase">
-                        <div class="tech-category">
-                            <h4>Frontend</h4>
-                            <div class="tech-pills">
-                                <span class="tech-pill">Next.js</span>
-                                <span class="tech-pill">React</span>
-                                <span class="tech-pill">Vue.js</span>
-                                <span class="tech-pill">Tailwind CSS</span>
-                            </div>
+    <!-- Technology Stack Section -->
+    <section class="features-section animate-on-scroll">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Technology Stack</h2>
+                <p>We leverage cutting-edge technologies to deliver exceptional experiences across all platforms and devices.</p>
+                
+                <div class="tech-showcase">
+                    <div class="tech-category">
+                        <h4>Frontend</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">Next.js</span>
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Vue.js</span>
+                            <span class="tech-pill">Tailwind CSS</span>
                         </div>
-                        <div class="tech-category">
-                            <h4>Backend</h4>
-                            <div class="tech-pills">
-                                <span class="tech-pill">Laravel</span>
-                                <span class="tech-pill">Node.js</span>
-                                <span class="tech-pill">Express</span>
-                                <span class="tech-pill">Python</span>
-                            </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Backend</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">Laravel</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express</span>
+                            <span class="tech-pill">Python</span>
                         </div>
-                        <div class="tech-category">
-                            <h4>Database & Cloud</h4>
-                            <div class="tech-pills">
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">PostgreSQL</span>
-                                <span class="tech-pill">Firebase</span>
-                                <span class="tech-pill">Vercel</span>
-                            </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Database & Cloud</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">Firebase</span>
+                            <span class="tech-pill">Vercel</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-section">
-                    <h2>Our Values</h2>
-                    <div class="grid grid-three-col">
-                        <div class="value-card">
-                            <i class="fas fa-heart"></i>
-                            <h3>User-Centric</h3>
-                            <p>Every decision we make is guided by what's best for our users and their experience.</p>
+    <!-- Values Section -->
+    <section class="featured-section animate-on-scroll">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Core Values</h2>
+                <div class="grid grid-three-col">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>User-Centric</h3>
+                        <p>Every decision we make is guided by what's best for our users and their experience. We prioritize intuitive design and seamless functionality.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Innovation</h3>
+                        <p>We constantly push boundaries to create something new while respecting timeless gameplay. Modern technology meets classic fun.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>We believe in open-source development and building together with our community. Collaboration drives our best work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section class="features-section animate-on-scroll">
+        <div class="container">
+            <div class="about-section">
+                <h2>Featured Projects</h2>
+                <p>Explore some of our most popular creations that showcase our commitment to quality and innovation.</p>
+                
+                <div class="grid grid-three-col">
+                    <div class="project-block" onclick="window.open('https://neo-sweeper.vercel.app/', '_blank')">
+                        <i class="project-icon fas fa-bomb"></i>
+                        <div class="project-title">NeoSweeper</div>
+                        <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and smart gameplay mechanics</div>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Next.js</span>
+                            <span class="tech-pill">React</span>
                         </div>
-                        <div class="value-card">
-                            <i class="fas fa-rocket"></i>
-                            <h3>Innovation</h3>
-                            <p>We constantly push boundaries to create something new while respecting timeless gameplay.</p>
+                    </div>
+                    
+                    <div class="project-block" onclick="window.open('https://lap-insight-sigma.vercel.app/', '_blank')">
+                        <i class="project-icon fas fa-laptop"></i>
+                        <div class="project-title">LapInsight</div>
+                        <div class="project-desc">Comprehensive laptop comparison platform with real-time price tracking and detailed analytics</div>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Next.js</span>
+                            <span class="tech-pill">Firebase</span>
                         </div>
-                        <div class="value-card">
-                            <i class="fas fa-users"></i>
-                            <h3>Community</h3>
-                            <p>We believe in open-source development and building together with our community.</p>
+                    </div>
+                    
+                    <div class="project-block" onclick="window.open('https://github.com/lazzerex/task-flow', '_blank')">
+                        <i class="project-icon fas fa-tasks"></i>
+                        <div class="project-title">TaskFlow</div>
+                        <div class="project-desc">Full-featured task management system with collaborative workspaces and priority management</div>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Laravel</span>
+                            <span class="tech-pill">MySQL</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-section">
-    <h2>Join Our Journey</h2>
-    <p>Whether you're a player looking for your next favorite game, a developer interested in contributing to our open-source projects, or a partner wanting to collaborate, we'd love to hear from you.</p>
-    <div class="cta-buttons" style="margin-top: 2rem;">
-        <a href="index.html" class="nav-button">
+    <!-- Call to Action Section -->
+    <section class="newsletter-section animate-on-scroll">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h2>Join Our Journey</h2>
+                    <p>Whether you're a player looking for your next favorite game, a developer interested in contributing to our open-source projects, or a partner wanting to collaborate, we'd love to hear from you.</p>
+                    
+                    <div class="cta-buttons" style="margin-top: 2rem;">
+                        <a href="index.html" class="nav-button">
             <i class="fas fa-home" style="margin-right: 10px;"></i>
             Return to Home
         </a>
         <a href="index.html#games" class="nav-button">
-            <i class="fas fa-gamepad" style="margin-right: 10px;"></i>
+            <i class="fas fa-gamepad" style="margin-right: 15px;"></i>
             Explore Games
         </a>
-    </div>
-</div>
+                    </div>
+                </div>
+                <div class="newsletter-graphic">
+                    <div class="pulsing-dot"></div>
+                    <div class="connecting-line"></div>
+                </div>
             </div>
         </div>
     </section>
