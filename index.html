@@ -20,7 +20,7 @@
             <div class="logo">
                 <a href="/">Lazzerex Digital Labs</a>
             </div>
-            
+
             <div class="nav-links">
                 <a href="#games" class="nav-item">Games</a>
                 <a href="#projects" class="nav-item">Projects</a>
@@ -28,27 +28,27 @@
                 <a href="about.html" class="nav-item">About</a>
                 <a href="https://github.com/lazzerex" targset="_blank" class="nav-item">Github</a>
             </div>
-            
+
             <div class="nav-buttons" id="navButtons">
-    <!-- Default state (not signed in) -->
-    <div id="guestButtons">
-        <a href="#" class="login-button" onclick="openAuthModal('signin')">Sign In</a>
-        <a href="#" class="cta-button nav-cta" onclick="openAuthModal('signup')">Get Started</a>
-    </div>
-    
-    <!-- Signed in state -->
-    <div id="userProfile" class="user-profile" style="display: none;">
-        <div class="user-avatar" id="userAvatar" title="User Profile">JD</div>
-        <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
-    </div>
-</div>
-            
+                <!-- Default state (not signed in) -->
+                <div id="guestButtons">
+                    <a href="#" class="login-button" onclick="openAuthModal('signin')">Sign In</a>
+                    <a href="#" class="cta-button nav-cta" onclick="openAuthModal('signup')">Get Started</a>
+                </div>
+
+                <!-- Signed in state -->
+                <div id="userProfile" class="user-profile" style="display: none;">
+                    <div class="user-avatar" id="userAvatar" title="User Profile">JD</div>
+                    <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+                </div>
+            </div>
+
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
-    
+
     <!-- Mobile Menu (Hidden by default) -->
     <div class="mobile-menu">
         <a href="#games" class="mobile-menu-item">Games</a>
@@ -73,33 +73,34 @@
         </div>
     </div>
 
-    
+
 
     <!-- Add Hero Section -->
     <section class="hero animate-on-scroll">
         <div class="hero-content">
             <h1>Digital Playground for Modern Minds</h1>
-            <p class="hero-subtext">Experience reinvented classic games with cutting-edge technology and sleek design</p>
-            
+            <p class="hero-subtext">Experience reinvented classic games with cutting-edge technology and sleek design
+            </p>
+
             <div class="cta-buttons">
                 <a href="#games" class="cta-button">Explore Games</a>
                 <a href="#projects" class="cta-button outline">View Projects</a>
             </div>
 
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">40+</div>
-                <div class="stat-label">Games Played</div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Games Played</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Active Players</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Positive Ratings</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">8+</div>
-                <div class="stat-label">Active Players</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Positive Ratings</div>
-            </div>
-        </div>
     </section>
 
     <div class="container" id="games">
@@ -108,23 +109,24 @@
             <div class="project-block" onclick="openGame('NeoSweeper', 'https://neo-sweeper.vercel.app/')">
                 <i class="project-icon fas fa-bomb"></i>
                 <div class="project-title">NeoSweeper</div>
-                <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and gameplay mechanics</div>
+                <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and gameplay
+                    mechanics</div>
             </div>
-            
 
-            <div class ="project-block" onclick="openGame('NeoSudoku', 'https://neo-sudoku.vercel.app/')">              
+
+            <div class="project-block" onclick="openGame('NeoSudoku', 'https://neo-sudoku.vercel.app/')">
                 <i class="project-icon fas fa-border-all"></i>
                 <div class="project-title">NeoSudoku</div>
                 <div class="project-desc">Intelligent number puzzle game with multiple difficulty levels and hints</div>
             </div>
 
-            <div class ="project-block" onclick="openGame('Neo2048', 'https://neo-2048.vercel.app/')">
+            <div class="project-block" onclick="openGame('Neo2048', 'https://neo-2048.vercel.app/')">
                 <i class="project-icon fas fa-superscript"></i>
                 <div class="project-title">Neo2048</div>
                 <div class="project-desc">Reimagined sliding block puzzle with smooth animations</div>
             </div>
 
-            <div class ="project-block" onclick="openGame('NeoSolitaire', 'https://neo-solitaire.vercel.app/')">
+            <div class="project-block" onclick="openGame('NeoSolitaire', 'https://neo-solitaire.vercel.app/')">
                 <i class="project-icon fas fa-diamond"></i>
                 <div class="project-title">NeoSolitaire</div>
                 <div class="project-desc">Modern solitaire card game with sleek design and fluid animations</div>
@@ -140,10 +142,10 @@
             <div class="project-block" onclick="openGame('WordRush', 'https://word-rush-six.vercel.app/')">
                 <i class="project-icon fas fa-keyboard"></i>
                 <div class="project-title">WordRush</div>
-                <div class="project-desc">Interactive typing test web application made with Next.js</div>             
+                <div class="project-desc">Interactive typing test web application made with Next.js</div>
             </div>
 
-            
+
             <div class="project-block coming-soon">
                 <i class="project-icon fas fa-chess"></i>
                 <div class="project-title">NeoChess</div>
@@ -163,7 +165,7 @@
                 <div class="project-desc">Programming puzzle battles with real-time code validation</div>
             </div>
 
-            
+
         </div>
     </div>
 
@@ -219,112 +221,142 @@
                     <i class="project-icon fas fa-folder-open" style="color: #ff0000;"></i>
                     <div class="project-title">File Organizer</div>
                     <div class="project-desc">
-                        A fast, efficient command-line tool written in Rust for organizing files by type, date, or custom rules. Perfect for cleaning up messy directories.
+                        A fast, efficient command-line tool written in Rust for organizing files by type, date, or
+                        custom rules. Perfect for cleaning up messy directories.
                     </div>
                     <div class="tech-stack">
                         <span class="tech-pill">Rust</span>
                         <span class="tech-pill">Command-line Tool</span>
                     </div>
                 </a>
+
+                <a href="https://github.com/lazzerex/ferris-lang" class="project-block" target="_blank">
+                    <i class="project-icon fas fa-file-code" style="color: #787575;"></i>
+                    <div class="project-title">Ferris Language</div>
+                    <div class="project-desc">
+                        A simple programming language interpreter written in Rust, designed for educational purposes.
+                        Featuring a basic syntax and allows users to run simple scripts directly in the terminal.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Rust</span>
+                        <span class="tech-pill">Programming Language</span>
+                    </div>
+                </a>
+
+                <div class="project-block coming-soon">
+                    <i class="project-icon fas fa-code-branch" style="color: #000000;"></i>
+                    <div class="project-title">DevFlow</div>
+                    <div class="project-desc">
+                        A developer workflow automation tool that integrates with Git, CI/CD pipelines, and project
+                        management systems. Streamlines repetitive development tasks with intelligent automation.
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">GitHub API</span>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
 
     <!-- Web Applications Section -->
-<section class="featured-section animate-on-scroll" id="web-apps">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Web Applications That We Take Part In</h2> 
-        <div class="grid">
-            <a href="https://lap-insight-sigma.vercel.app/" class="project-block web-app-block" target="_blank">
-                <i class="project-icon fas fa-laptop" style="color: #9333ea;"></i>
-                <div class="project-title">LapInsight</div>
-                <div class="project-desc">
-                    A Comprehensive laptop comparison platform helping users find the perfect device based on 
-                    performance metrics, price analysis, and user reviews. Features advanced filtering and 
-                    real-time price tracking.
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-pill">Next.js</span>
-                    <span class="tech-pill">Node.js</span>
-                    <span class="tech-pill">Firebase</span>
-                    <span class="tech-pill">REST API</span>
-                </div>
-                <div class="app-features">
-                    <div class="feature-tag">
-                        <i class="fas fa-balance-scale"></i>
-                        <span>Smart Comparison</span>
+    <section class="featured-section animate-on-scroll" id="web-apps">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Web Applications That We Take Part In</h2>
+            <div class="grid">
+                <a href="https://lap-insight-sigma.vercel.app/" class="project-block web-app-block" target="_blank">
+                    <i class="project-icon fas fa-laptop" style="color: #9333ea;"></i>
+                    <div class="project-title">LapInsight</div>
+                    <div class="project-desc">
+                        A Comprehensive laptop comparison platform helping users find the perfect device based on
+                        performance metrics, price analysis, and user reviews. Features advanced filtering and
+                        real-time price tracking.
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Price Tracking</span>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Firebase</span>
+                        <span class="tech-pill">REST API</span>
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-star"></i>
-                        <span>User Reviews</span>
+                    <div class="app-features">
+                        <div class="feature-tag">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Smart Comparison</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Price Tracking</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-star"></i>
+                            <span>User Reviews</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <div class="project-block web-app-block coming-soon">
-                <i class="project-icon fas fa-calendar-alt" style="color: #059669;"></i>
-                <div class="project-title">EventFlow</div>
-                <div class="project-desc">
-                    Smart event management platform with automated scheduling, attendee tracking, and 
-                    real-time analytics. Perfect for organizing conferences, workshops, and corporate events.
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-pill">Vue.js</span>
-                    <span class="tech-pill">Express</span>
-                    <span class="tech-pill">PostgreSQL</span>
-                    <span class="tech-pill">Socket.io</span>
-                </div>
-                <div class="app-features">
-                    <div class="feature-tag">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Auto Scheduling</span>
+                <div class="project-block web-app-block coming-soon">
+                    <i class="project-icon fas fa-calendar-alt" style="color: #059669;"></i>
+                    <div class="project-title">EventFlow</div>
+                    <div class="project-desc">
+                        Smart event management platform with automated scheduling, attendee tracking, and
+                        real-time analytics. Perfect for organizing conferences, workshops, and corporate events.
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-users"></i>
-                        <span>Attendee Management</span>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Vue.js</span>
+                        <span class="tech-pill">Express</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Socket.io</span>
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Live Analytics</span>
+                    <div class="app-features">
+                        <div class="feature-tag">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Auto Scheduling</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-users"></i>
+                            <span>Attendee Management</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Live Analytics</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-block web-app-block coming-soon">
-                <i class="project-icon fas fa-graduation-cap" style="color: #dc2626;"></i>
-                <div class="project-title">SkillPath</div>
-                <div class="project-desc">
-                    Personalized learning platform that creates custom study paths based on your goals, 
-                    skill level, and learning style. Features progress tracking and AI-powered recommendations.
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-pill">Next.js</span>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">TensorFlow</span>
-                    <span class="tech-pill">Redis</span>
-                </div>
-                <div class="app-features">
-                    <div class="feature-tag">
-                        <i class="fas fa-brain"></i>
-                        <span>AI Recommendations</span>
+                <div class="project-block web-app-block coming-soon">
+                    <i class="project-icon fas fa-graduation-cap" style="color: #dc2626;"></i>
+                    <div class="project-title">SkillPath</div>
+                    <div class="project-desc">
+                        Personalized learning platform that creates custom study paths based on your goals,
+                        skill level, and learning style. Features progress tracking and AI-powered recommendations.
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-route"></i>
-                        <span>Custom Paths</span>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">TensorFlow</span>
+                        <span class="tech-pill">Redis</span>
                     </div>
-                    <div class="feature-tag">
-                        <i class="fas fa-trophy"></i>
-                        <span>Progress Tracking</span>
+                    <div class="app-features">
+                        <div class="feature-tag">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Recommendations</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-route"></i>
+                            <span>Custom Paths</span>
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-trophy"></i>
+                            <span>Progress Tracking</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Featured Section -->
     <section class="featured-section animate-on-scroll">
@@ -350,10 +382,11 @@
         </div>
     </section>
 
-    
+
     <section class="features-section animate-on-scroll">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Why Developers Love Our Stack</h2>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Why Developers Love Our Stack
+            </h2>
             <div class="grid grid-three-col">
                 <div class="feature-card">
                     <i class="fas fa-bolt feature-icon"></i>
@@ -373,7 +406,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="newsletter-section animate-on-scroll">
         <div class="container">
             <div class="newsletter-card">
@@ -405,56 +438,58 @@
     </footer>
     <script src="script.js"></script>
     <!-- Authentication Modal -->
-<div id="authModal" class="auth-modal">
-    <div class="auth-modal-content">
-        <!-- Add loading overlay -->
-        <div id="authLoadingOverlay" class="auth-loading-overlay">
-            <div class="auth-loading-content">
-                <div class="auth-spinner"></div>
-                <div class="auth-loading-text" id="authLoadingText">Signing you in...</div>
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <!-- Add loading overlay -->
+            <div id="authLoadingOverlay" class="auth-loading-overlay">
+                <div class="auth-loading-content">
+                    <div class="auth-spinner"></div>
+                    <div class="auth-loading-text" id="authLoadingText">Signing you in...</div>
+                </div>
             </div>
-        </div>
-        
-        <div class="auth-header">
-            <h2 id="authModalTitle">Welcome Back</h2>
-            <button class="auth-close" onclick="closeAuthModal()">&times;</button>
-        </div>
-        <div class="auth-body">
-            <div id="successMessage" class="success-message" style="display: none;">
-                Account created successfully! Welcome to Lazzerex Digital Labs. Please wait a second while we redirect you to the homepage.
+
+            <div class="auth-header">
+                <h2 id="authModalTitle">Welcome Back</h2>
+                <button class="auth-close" onclick="closeAuthModal()">&times;</button>
             </div>
-            
-            <form id="authForm" class="auth-form">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <div class="auth-body">
+                <div id="successMessage" class="success-message" style="display: none;">
+                    Account created successfully! Welcome to Lazzerex Digital Labs. Please wait a second while we
+                    redirect you to the homepage.
                 </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+                <form id="authForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password">
+                    </div>
+
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                    </div>
+
+                    <button type="submit" class="auth-submit" id="authSubmitBtn">Sign In</button>
+                </form>
+
+                <div class="auth-switch">
+                    <span id="authSwitchText">Don't have an account?</span>
+                    <a class="auth-switch-link" onclick="toggleAuthMode()" id="authSwitchLink">Create one</a>
                 </div>
-                
-                <div class="form-group" id="confirmPasswordGroup" style="display: none;">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
-                </div>
-                
-                <div class="form-group" id="nameGroup" style="display: none;">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
-                </div>
-                
-                <button type="submit" class="auth-submit" id="authSubmitBtn">Sign In</button>
-            </form>
-            
-            <div class="auth-switch">
-                <span id="authSwitchText">Don't have an account?</span>
-                <a class="auth-switch-link" onclick="toggleAuthMode()" id="authSwitchLink">Create one</a>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
