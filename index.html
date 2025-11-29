@@ -106,25 +106,25 @@
     <div class="container" id="games">
         <h2 style="text-align: center; margin-bottom: 2rem;">Jump In & Play – Right in Your Browser!</h2>
         <div class="grid animate-on-scroll">
-            <div class="project-block" onclick="openGame('NeoSweeper', 'https://neo-sweeper.vercel.app/')">
+            <a class="project-block" href="https://neo-sweeper.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-bomb"></i>
                 <div class="project-title">NeoSweeper</div>
                 <div class="project-desc">Modern twist on classic minesweeper with enhanced visuals and gameplay
                     mechanics</div>
-            </div>
+            </a>
 
 
-            <div class="project-block" onclick="openGame('NeoSudoku', 'https://neo-sudoku.vercel.app/')">
+            <a class="project-block" href="https://neo-sudoku.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-border-all"></i>
                 <div class="project-title">NeoSudoku</div>
                 <div class="project-desc">Intelligent number puzzle game with multiple difficulty levels and hints</div>
-            </div>
+            </a>
 
-            <div class="project-block" onclick="openGame('Neo2048', 'https://neo-2048.vercel.app/')">
+            <a class="project-block" href="https://neo-2048.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-superscript"></i>
                 <div class="project-title">Neo2048</div>
                 <div class="project-desc">Reimagined sliding block puzzle with smooth animations</div>
-            </div>
+            </a>
 
             <a class="project-block" href="https://neo-tetris.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-cube"></i>
@@ -133,24 +133,24 @@
                     aesthetic.</div>
             </a>
 
-            <div class="project-block" onclick="openGame('NeoSolitaire', 'https://neo-solitaire.vercel.app/')">
+            <a class="project-block" href="https://neo-solitaire.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-diamond"></i>
                 <div class="project-title">NeoSolitaire</div>
                 <div class="project-desc">Modern solitaire card game with sleek design and fluid animations</div>
-            </div>
+            </a>
 
-            <div class="project-block" onclick="openGame('MemoMix', 'https://memomix.vercel.app/')">
+            <a class="project-block" href="https://memomix.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-shuffle"></i>
                 <div class="project-title">MemoMix</div>
                 <div class="project-desc">Memory challenge game with dynamic patterns</div>
-            </div>
+            </a>
 
 
-            <div class="project-block" onclick="openGame('WordRush', 'https://word-rush-six.vercel.app/')">
+            <a class="project-block" href="https://word-rush-six.vercel.app/" target="_blank">
                 <i class="project-icon fas fa-keyboard"></i>
                 <div class="project-title">WordRush</div>
                 <div class="project-desc">Interactive typing test web application made with Next.js</div>
-            </div>
+            </a>
 
 
             <div class="project-block coming-soon">
@@ -176,20 +176,7 @@
         </div>
     </div>
 
-    <!-- Game Modal -->
-    <div id="gameModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="gameTitle">Game Title</h3>
-                <button class="close" onclick="closeGame()">&times;</button>
-            </div>
-            <div id="loadingIndicator" class="loading">
-                <div class="spinner"></div>
-                Loading game...
-            </div>
-            <iframe id="gameFrame" class="game-iframe" style="display: none;"></iframe>
-        </div>
-    </div>
+
 
     <!-- Side Projects Section -->
     <section class="featured-section animate-on-scroll" id="projects">

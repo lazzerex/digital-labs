@@ -1073,20 +1073,6 @@ body:not(.loaded) {
             transform: scale(1.1);
         }
 
-        .game-iframe {
-            width: 100%;
-            flex: 1;
-            border: none;
-            background: white;
-            overflow: auto;
-        }
-
-        .iframe-container {
-            flex: 1;
-            overflow: auto;
-            background: white;
-            position: relative;
-        }
 
         .loading {
             display: flex;
